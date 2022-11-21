@@ -1,0 +1,15 @@
+istore x //recupère value de la pile dans x
+iload x //mets x sur la pile (valeur de variable)
+ldc x //mets x sur la pile (valeur)
+.var index is nom I/Z (int/bool)
+
+
+println
+string()
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "Hello world!"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+(int)
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1234567
+invokevirtual java/io/PrintStream/println(I)V

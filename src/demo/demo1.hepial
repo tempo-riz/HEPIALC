@@ -1,0 +1,21 @@
+programme demo1
+entier n;
+booleen b;
+//entier n; //?
+//entier result;
+constante entier x=2;
+debutprg
+    //x=3;
+    //n=2;
+    //ecrire "Nombre a mettre au carré: ";
+    n=2/3;
+    //n=x;
+    //x=n;
+    //b=5>4;
+    //lire n;
+    //n=2;
+    b=faux;
+    //result = n+2;
+    //ecrire "Résultat:";
+    //ecrire result;
+finprg

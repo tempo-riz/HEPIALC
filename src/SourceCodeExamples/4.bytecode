@@ -1,0 +1,38 @@
+.class public Program
+.super java/lang/Object
+.method public static main([Ljava/lang/String;)V
+.limit stack 20000
+.limit locals 1
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+ldc 2
+ldc 3
+imul
+iadd
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+ldc 2
+iadd
+ldc 3
+imul
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+ldc 2
+ldc 3
+imul
+iadd
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+ldc 2
+iadd
+ldc 3
+ldc 3
+iadd
+imul
+invokevirtual java/io/PrintStream/println(I)V
+exit_label:
+return
+.end method

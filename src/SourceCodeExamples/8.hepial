@@ -1,0 +1,20 @@
+programme Program
+entier x, y;
+debutprg
+    ecrire "::: loop0";
+    pour x allantde 0 a 10 faire
+        ecrire x;
+    finpour
+
+    ecrire "::: loop1";
+    y = 4;
+    pour x allantde 1 a y faire
+        ecrire x;
+    finpour
+
+    ecrire "::: loop2";
+    pour x allantde 1 a 10 faire
+        x = x + 1;
+        ecrire x;
+    finpour
+finprg

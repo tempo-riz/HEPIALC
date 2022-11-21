@@ -1,0 +1,23 @@
+comment ça fonctionne :
+
+analyse lexicale: flex  (fourni) -> symboles
+
+le cup (analyse syntaxique) génere l'arbre syntaxique abstrait (AST) : ensembles des classes (noeuds : AST Node) en instanciant les classes selon l'input.hepial
+chaque noeud est une expression (ex a+b) ou une instruction (ex Pour,Condition)
+
+parcours des classes : Chaque classe hérite d'une autre et elles héritent tous de ASTnode pour pouvoir parcourir l’arbre avec un "pattern visiteur" (ASTVisitor).
+
+une fois l'arbre construit :
+
+
+- géneration code source : on le parcours et "affiche" la représentation de chaque noeud pour recreer le code source
+
+- table des symboles (TDS): hashmap<Nom de la variable,Type de la variable> qui permet d'enregistrer les variables ou constantes créés 
+                            (on ajoute a chaque déclaration de variable/constante), sera utilisé dans l'analyse sémantique et géneration du bytecode
+
+- analyse sémantique : on le parcours et dans chaque noeud on vérifie les cas interdits 
+    exemple1:  une variable est déclarée 2 fois (on utilse la TDS pour vérifier),
+    exemple2:  pour check les types (ex :Addition on doit check que les 2 cotés sont nb entiers) chaque noeud renvoie son propre type
+
+- generation du bytecode : on le parcours et pour chaque noeud on écris son code assembleur, on utilse la TDS pour connaitre le nombre de variables, leurs nom et types
+

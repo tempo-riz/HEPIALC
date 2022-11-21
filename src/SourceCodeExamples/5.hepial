@@ -1,0 +1,78 @@
+programme Program
+booleen v, f;
+entier x, y;
+debutprg
+    v = vrai;
+    f = faux;
+    x = 2;
+    y = 3;
+    ecrire "::: et";
+    ecrire faux et faux;
+    ecrire vrai et faux;
+    ecrire vrai et vrai;
+    ecrire vrai et v;
+    ecrire vrai et f;
+
+    ecrire "::: ==";
+    ecrire faux == faux;
+    ecrire faux == vrai;
+    ecrire faux == v;
+    ecrire vrai == v;
+    ecrire faux == f;
+    ecrire 2 == 3;
+    ecrire 2 == 2;
+    ecrire x == 2;
+    ecrire y == 3;
+
+    ecrire "::: ou";
+    ecrire faux ou faux;
+    ecrire faux ou vrai;
+    ecrire faux ou v;
+    ecrire vrai ou v;
+    ecrire faux ou f;
+
+    ecrire "::: <>";
+    ecrire faux <> faux;
+    ecrire faux <> vrai;
+    ecrire faux <> v;
+    ecrire vrai <> v;
+    ecrire faux <> f;
+    ecrire 2 <> -2;
+    ecrire 2 <> 2;
+    ecrire x <> 2;
+    ecrire x <> y;
+
+    ecrire "::: >=";
+    ecrire 2 >= -2;
+    ecrire 2 >= 2;
+    ecrire 2 >= 3;
+    ecrire x >= y;
+    ecrire y >= x;
+    ecrire y >= 2;
+
+
+    ecrire "::: >";
+    ecrire 2 > -2;
+    ecrire 2 > 2;
+    ecrire 2 > 3;
+    ecrire x > y;
+    ecrire y > x;
+    ecrire y > 2;
+
+    ecrire "::: <";
+    ecrire 2 < -2;
+    ecrire 2 < 2;
+    ecrire 2 < 3;
+    ecrire x < y;
+    ecrire y < x;
+    ecrire y < 2;
+
+    ecrire "::: non";
+    ecrire v;
+    ecrire non v;
+    ecrire non f;
+    ecrire non vrai;
+    ecrire non faux;
+    ecrire non faux et vrai;
+
+finprg

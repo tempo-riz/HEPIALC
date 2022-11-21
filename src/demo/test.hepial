@@ -1,0 +1,32 @@
+programme Program
+entier x,y;
+
+debutprg
+  ecrire "Hello world!";
+  ecrire 1234567;
+  ecrire vrai;
+  ecrire faux;
+
+   ecrire 6 + 2;
+   x = 20;
+   y = 4;
+   ecrire x - y;
+    ecrire x;
+
+    //marche
+    //ecrire 3 * x;
+    //marche 
+    //ecrire x * 3;
+    ecrire x * y; 
+
+    ecrire 6 - 2;
+    ecrire 6 / 2;
+    ecrire x / y;
+  
+    x = x + 4;
+    y = y - 2;
+    ecrire x + y;
+    ecrire x - y;
+    ecrire x / y;
+    ecrire x * y;
+finprg

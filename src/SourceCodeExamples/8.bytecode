@@ -1,0 +1,74 @@
+.class public Program
+.super java/lang/Object
+.method public static main([Ljava/lang/String;)V
+.limit stack 20000
+.limit locals 3
+.var 0 is x I
+ldc 0
+istore 0
+.var 1 is y I
+ldc 0
+istore 1
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: loop0"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+ldc 0
+istore 0
+label_0:
+ldc 10
+iload 0
+if_icmplt label_1
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+invokevirtual java/io/PrintStream/println(I)V
+iload 0
+ldc 1
+iadd
+istore 0
+goto label_0
+label_1:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: loop1"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+ldc 4
+istore 1
+ldc 1
+istore 0
+label_2:
+iload 1
+iload 0
+if_icmplt label_3
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+invokevirtual java/io/PrintStream/println(I)V
+iload 0
+ldc 1
+iadd
+istore 0
+goto label_2
+label_3:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: loop2"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+ldc 1
+istore 0
+label_4:
+ldc 10
+iload 0
+if_icmplt label_5
+iload 0
+ldc 1
+iadd
+istore 0
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+invokevirtual java/io/PrintStream/println(I)V
+iload 0
+ldc 1
+iadd
+istore 0
+goto label_4
+label_5:
+exit_label:
+return
+.end method

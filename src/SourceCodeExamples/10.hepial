@@ -1,0 +1,8 @@
+programme Program
+booleen x;
+debutprg
+    ecrire "Enter a boolen:";
+    lire x;
+    ecrire "Result of not operator:";
+    ecrire non x;
+finprg

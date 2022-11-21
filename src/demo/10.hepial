@@ -1,0 +1,8 @@
+programme Program
+entier x;
+debutprg
+    ecrire "Enter a integer:";
+    lire x;
+    ecrire "Result of tilda operator:";
+    ecrire ~x;
+finprg

@@ -1,0 +1,8 @@
+programme Program
+
+debutprg
+   ecrire "Hello world!";
+   ecrire 1234567;
+   ecrire vrai;
+   ecrire faux;
+finprg

@@ -1,0 +1,26 @@
+.class public Program
+.super java/lang/Object
+.method public static main([Ljava/lang/String;)V
+.limit stack 20000
+.limit locals 3
+.var 0 is n I
+ldc 12
+istore 0
+.var 1 is b Z
+ldc 1
+istore 1
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 1
+ifeq label_0
+ldc "vrai"
+goto label_1
+label_0:
+ldc "faux"
+label_1:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+exit_label:
+return
+.end method

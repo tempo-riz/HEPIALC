@@ -1,0 +1,828 @@
+.class public Program
+.super java/lang/Object
+.method public static main([Ljava/lang/String;)V
+.limit stack 20000
+.limit locals 5
+.var 0 is v Z
+ldc 0
+istore 0
+.var 1 is f Z
+ldc 0
+istore 1
+.var 2 is x I
+ldc 0
+istore 2
+.var 3 is y I
+ldc 0
+istore 3
+ldc 1
+istore 0
+ldc 0
+istore 1
+ldc 2
+istore 2
+ldc 3
+istore 3
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: et"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+ldc 0
+iand
+ifeq label_0
+ldc "vrai"
+goto label_1
+label_0:
+ldc "faux"
+label_1:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+ldc 0
+iand
+ifeq label_2
+ldc "vrai"
+goto label_3
+label_2:
+ldc "faux"
+label_3:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+ldc 1
+iand
+ifeq label_4
+ldc "vrai"
+goto label_5
+label_4:
+ldc "faux"
+label_5:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+iload 0
+iand
+ifeq label_6
+ldc "vrai"
+goto label_7
+label_6:
+ldc "faux"
+label_7:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+iload 1
+iand
+ifeq label_8
+ldc "vrai"
+goto label_9
+label_8:
+ldc "faux"
+label_9:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: =="
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+ldc 0
+if_icmpeq label_10
+iconst_0
+goto label_11
+label_10:
+iconst_1
+label_11:
+ifeq label_12
+ldc "vrai"
+goto label_13
+label_12:
+ldc "faux"
+label_13:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+ldc 1
+if_icmpeq label_14
+iconst_0
+goto label_15
+label_14:
+iconst_1
+label_15:
+ifeq label_16
+ldc "vrai"
+goto label_17
+label_16:
+ldc "faux"
+label_17:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+iload 0
+if_icmpeq label_18
+iconst_0
+goto label_19
+label_18:
+iconst_1
+label_19:
+ifeq label_20
+ldc "vrai"
+goto label_21
+label_20:
+ldc "faux"
+label_21:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+iload 0
+if_icmpeq label_22
+iconst_0
+goto label_23
+label_22:
+iconst_1
+label_23:
+ifeq label_24
+ldc "vrai"
+goto label_25
+label_24:
+ldc "faux"
+label_25:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+iload 1
+if_icmpeq label_26
+iconst_0
+goto label_27
+label_26:
+iconst_1
+label_27:
+ifeq label_28
+ldc "vrai"
+goto label_29
+label_28:
+ldc "faux"
+label_29:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 3
+if_icmpeq label_30
+iconst_0
+goto label_31
+label_30:
+iconst_1
+label_31:
+ifeq label_32
+ldc "vrai"
+goto label_33
+label_32:
+ldc "faux"
+label_33:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 2
+if_icmpeq label_34
+iconst_0
+goto label_35
+label_34:
+iconst_1
+label_35:
+ifeq label_36
+ldc "vrai"
+goto label_37
+label_36:
+ldc "faux"
+label_37:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 2
+ldc 2
+if_icmpeq label_38
+iconst_0
+goto label_39
+label_38:
+iconst_1
+label_39:
+ifeq label_40
+ldc "vrai"
+goto label_41
+label_40:
+ldc "faux"
+label_41:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 3
+ldc 3
+if_icmpeq label_42
+iconst_0
+goto label_43
+label_42:
+iconst_1
+label_43:
+ifeq label_44
+ldc "vrai"
+goto label_45
+label_44:
+ldc "faux"
+label_45:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: ou"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+ldc 0
+ior
+ifeq label_46
+ldc "vrai"
+goto label_47
+label_46:
+ldc "faux"
+label_47:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+ldc 1
+ior
+ifeq label_48
+ldc "vrai"
+goto label_49
+label_48:
+ldc "faux"
+label_49:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+iload 0
+ior
+ifeq label_50
+ldc "vrai"
+goto label_51
+label_50:
+ldc "faux"
+label_51:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+iload 0
+ior
+ifeq label_52
+ldc "vrai"
+goto label_53
+label_52:
+ldc "faux"
+label_53:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+iload 1
+ior
+ifeq label_54
+ldc "vrai"
+goto label_55
+label_54:
+ldc "faux"
+label_55:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: <>"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+ldc 0
+if_icmpne label_56
+iconst_0
+goto label_57
+label_56:
+iconst_1
+label_57:
+ifeq label_58
+ldc "vrai"
+goto label_59
+label_58:
+ldc "faux"
+label_59:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+ldc 1
+if_icmpne label_60
+iconst_0
+goto label_61
+label_60:
+iconst_1
+label_61:
+ifeq label_62
+ldc "vrai"
+goto label_63
+label_62:
+ldc "faux"
+label_63:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+iload 0
+if_icmpne label_64
+iconst_0
+goto label_65
+label_64:
+iconst_1
+label_65:
+ifeq label_66
+ldc "vrai"
+goto label_67
+label_66:
+ldc "faux"
+label_67:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+iload 0
+if_icmpne label_68
+iconst_0
+goto label_69
+label_68:
+iconst_1
+label_69:
+ifeq label_70
+ldc "vrai"
+goto label_71
+label_70:
+ldc "faux"
+label_71:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+iload 1
+if_icmpne label_72
+iconst_0
+goto label_73
+label_72:
+iconst_1
+label_73:
+ifeq label_74
+ldc "vrai"
+goto label_75
+label_74:
+ldc "faux"
+label_75:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 2
+ineg
+if_icmpne label_76
+iconst_0
+goto label_77
+label_76:
+iconst_1
+label_77:
+ifeq label_78
+ldc "vrai"
+goto label_79
+label_78:
+ldc "faux"
+label_79:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 2
+if_icmpne label_80
+iconst_0
+goto label_81
+label_80:
+iconst_1
+label_81:
+ifeq label_82
+ldc "vrai"
+goto label_83
+label_82:
+ldc "faux"
+label_83:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 2
+ldc 2
+if_icmpne label_84
+iconst_0
+goto label_85
+label_84:
+iconst_1
+label_85:
+ifeq label_86
+ldc "vrai"
+goto label_87
+label_86:
+ldc "faux"
+label_87:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 2
+iload 3
+if_icmpne label_88
+iconst_0
+goto label_89
+label_88:
+iconst_1
+label_89:
+ifeq label_90
+ldc "vrai"
+goto label_91
+label_90:
+ldc "faux"
+label_91:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: >="
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 2
+ineg
+if_icmpge label_92
+iconst_0
+goto label_93
+label_92:
+iconst_1
+label_93:
+ifeq label_94
+ldc "vrai"
+goto label_95
+label_94:
+ldc "faux"
+label_95:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 2
+if_icmpge label_96
+iconst_0
+goto label_97
+label_96:
+iconst_1
+label_97:
+ifeq label_98
+ldc "vrai"
+goto label_99
+label_98:
+ldc "faux"
+label_99:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 3
+if_icmpge label_100
+iconst_0
+goto label_101
+label_100:
+iconst_1
+label_101:
+ifeq label_102
+ldc "vrai"
+goto label_103
+label_102:
+ldc "faux"
+label_103:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 2
+iload 3
+if_icmpge label_104
+iconst_0
+goto label_105
+label_104:
+iconst_1
+label_105:
+ifeq label_106
+ldc "vrai"
+goto label_107
+label_106:
+ldc "faux"
+label_107:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 3
+iload 2
+if_icmpge label_108
+iconst_0
+goto label_109
+label_108:
+iconst_1
+label_109:
+ifeq label_110
+ldc "vrai"
+goto label_111
+label_110:
+ldc "faux"
+label_111:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 3
+ldc 2
+if_icmpge label_112
+iconst_0
+goto label_113
+label_112:
+iconst_1
+label_113:
+ifeq label_114
+ldc "vrai"
+goto label_115
+label_114:
+ldc "faux"
+label_115:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: >"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 2
+ineg
+if_icmpgt label_116
+iconst_0
+goto label_117
+label_116:
+iconst_1
+label_117:
+ifeq label_118
+ldc "vrai"
+goto label_119
+label_118:
+ldc "faux"
+label_119:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 2
+if_icmpgt label_120
+iconst_0
+goto label_121
+label_120:
+iconst_1
+label_121:
+ifeq label_122
+ldc "vrai"
+goto label_123
+label_122:
+ldc "faux"
+label_123:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 3
+if_icmpgt label_124
+iconst_0
+goto label_125
+label_124:
+iconst_1
+label_125:
+ifeq label_126
+ldc "vrai"
+goto label_127
+label_126:
+ldc "faux"
+label_127:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 2
+iload 3
+if_icmpgt label_128
+iconst_0
+goto label_129
+label_128:
+iconst_1
+label_129:
+ifeq label_130
+ldc "vrai"
+goto label_131
+label_130:
+ldc "faux"
+label_131:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 3
+iload 2
+if_icmpgt label_132
+iconst_0
+goto label_133
+label_132:
+iconst_1
+label_133:
+ifeq label_134
+ldc "vrai"
+goto label_135
+label_134:
+ldc "faux"
+label_135:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 3
+ldc 2
+if_icmpgt label_136
+iconst_0
+goto label_137
+label_136:
+iconst_1
+label_137:
+ifeq label_138
+ldc "vrai"
+goto label_139
+label_138:
+ldc "faux"
+label_139:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: <"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 2
+ineg
+if_icmplt label_140
+iconst_0
+goto label_141
+label_140:
+iconst_1
+label_141:
+ifeq label_142
+ldc "vrai"
+goto label_143
+label_142:
+ldc "faux"
+label_143:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 2
+if_icmplt label_144
+iconst_0
+goto label_145
+label_144:
+iconst_1
+label_145:
+ifeq label_146
+ldc "vrai"
+goto label_147
+label_146:
+ldc "faux"
+label_147:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+ldc 3
+if_icmplt label_148
+iconst_0
+goto label_149
+label_148:
+iconst_1
+label_149:
+ifeq label_150
+ldc "vrai"
+goto label_151
+label_150:
+ldc "faux"
+label_151:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 2
+iload 3
+if_icmplt label_152
+iconst_0
+goto label_153
+label_152:
+iconst_1
+label_153:
+ifeq label_154
+ldc "vrai"
+goto label_155
+label_154:
+ldc "faux"
+label_155:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 3
+iload 2
+if_icmplt label_156
+iconst_0
+goto label_157
+label_156:
+iconst_1
+label_157:
+ifeq label_158
+ldc "vrai"
+goto label_159
+label_158:
+ldc "faux"
+label_159:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 3
+ldc 2
+if_icmplt label_160
+iconst_0
+goto label_161
+label_160:
+iconst_1
+label_161:
+ifeq label_162
+ldc "vrai"
+goto label_163
+label_162:
+ldc "faux"
+label_163:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "::: non"
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+ifeq label_164
+ldc "vrai"
+goto label_165
+label_164:
+ldc "faux"
+label_165:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+ifeq label_166
+iconst_0
+goto label_167
+label_166:
+iconst_1
+label_167:
+ifeq label_168
+ldc "vrai"
+goto label_169
+label_168:
+ldc "faux"
+label_169:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 1
+ifeq label_170
+iconst_0
+goto label_171
+label_170:
+iconst_1
+label_171:
+ifeq label_172
+ldc "vrai"
+goto label_173
+label_172:
+ldc "faux"
+label_173:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+ifeq label_174
+iconst_0
+goto label_175
+label_174:
+iconst_1
+label_175:
+ifeq label_176
+ldc "vrai"
+goto label_177
+label_176:
+ldc "faux"
+label_177:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+ifeq label_178
+iconst_0
+goto label_179
+label_178:
+iconst_1
+label_179:
+ifeq label_180
+ldc "vrai"
+goto label_181
+label_180:
+ldc "faux"
+label_181:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 0
+ldc 1
+iand
+ifeq label_182
+iconst_0
+goto label_183
+label_182:
+iconst_1
+label_183:
+ifeq label_184
+ldc "vrai"
+goto label_185
+label_184:
+ldc "faux"
+label_185:
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+exit_label:
+return
+.end method

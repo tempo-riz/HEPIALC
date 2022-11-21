@@ -1,0 +1,8 @@
+programme Program
+entier x;
+debutprg
+    ecrire "Enter a number:";
+    lire x;
+    ecrire "Next int:";
+    ecrire x + 1;
+finprg

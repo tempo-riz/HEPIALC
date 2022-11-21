@@ -1,0 +1,30 @@
+programme Program
+booleen v, f;
+entier x, y;
+debutprg
+    v = vrai;
+    f = faux;
+    x = 2;
+    y = 3;
+
+  si vrai alors
+		ecrire "vrai";
+  finsi
+
+  si faux alors
+		ecrire "faux";
+	finsi
+
+  si v alors
+		ecrire "v";
+	sinon
+		ecrire "non v";
+	finsi
+
+  si 2>3 alors
+		ecrire "2>3";
+	sinon
+		ecrire "non 2>3";
+	finsi
+
+finprg

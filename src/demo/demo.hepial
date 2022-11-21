@@ -1,0 +1,16 @@
+programme demo
+
+entier i,x,div,remainder;
+
+debutprg
+
+        x=3;
+        div=2;
+
+        tantque x>div faire
+         x=(x-div);
+        ecrire x;
+        fintantque
+
+
+finprg

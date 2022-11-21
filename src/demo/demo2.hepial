@@ -1,0 +1,14 @@
+programme demo2
+
+entier result, min,max,x;
+
+debutprg
+  	ecrire "Entrez un numero entre 0 et 100:";
+    lire x;
+        tantque (x < min) ou (x > max) faire
+           lire x;
+        fintantque
+    result=x;
+    ecrire "numero:";
+    ecrire result;
+finprg

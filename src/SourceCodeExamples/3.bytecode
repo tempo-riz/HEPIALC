@@ -1,0 +1,87 @@
+.class public Program
+.super java/lang/Object
+.method public static main([Ljava/lang/String;)V
+.limit stack 20000
+.limit locals 3
+.var 0 is x I  //entier x;
+ldc 0 //valeur de x sur la pile x->p
+istore 0 //valeur de la pile dans p->x  x=0 
+.var 1 is y I
+ldc 0
+istore 1
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+ldc 2
+iadd
+
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+ldc 2
+isub
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+ldc 2
+idiv
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+ldc 2
+imul
+invokevirtual java/io/PrintStream/println(I)V
+ldc 20
+istore 0
+ldc 4
+istore 1
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+iadd
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+isub
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+idiv
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+imul
+invokevirtual java/io/PrintStream/println(I)V
+iload 0
+ldc 4
+iadd
+istore 0
+iload 1
+ldc 2
+isub
+istore 1
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+iadd
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+isub
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+idiv
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+imul
+invokevirtual java/io/PrintStream/println(I)V
+exit_label:
+return
+.end method

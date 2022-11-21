@@ -1,0 +1,60 @@
+::: et
+faux
+faux
+vrai
+vrai
+faux
+::: ==
+vrai
+faux
+faux
+vrai
+vrai
+faux
+vrai
+vrai
+vrai
+::: ou
+faux
+vrai
+vrai
+vrai
+faux
+::: <>
+faux
+vrai
+vrai
+faux
+faux
+vrai
+faux
+faux
+vrai
+::: >=
+vrai
+vrai
+faux
+faux
+vrai
+vrai
+::: >
+vrai
+faux
+faux
+faux
+vrai
+vrai
+::: <
+faux
+faux
+vrai
+vrai
+faux
+faux
+::: non
+vrai
+faux
+vrai
+faux
+vrai
+vrai

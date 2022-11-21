@@ -1,0 +1,173 @@
+import java_cup.runtime.*;
+import java.util.Vector;
+import java.io.*;
+import java.util.*;
+
+action code {:
+// jdjdjd
+    
+:}
+
+terminal PRG, STARTPRG, ENDPRG, CONSTANT, SEMICOLON, STARTFUNC, ENDFUNC, OPENPARENT;
+terminal CLOSEPARENT, COMMA, EQUAL, DOUBLEPOINTS, OPENBRACK, CLOSEBRACK;
+terminal READ, WRITE, RETURN, IF, THEN, ELSE, ENDIF, WHILE, DO, ENDWHILE;
+terminal FOR, FROM, TO, ENDFOR, TRUE, FALSE,  PLUS, MINUS, TIMES, DIVIDE;
+terminal EQUALS, DIFF, INF, INFEQUAL, SUP, SUPEQUAL, AND, OR, TILDA, NOT;
+
+terminal String IDENT, STRINGCONST, TINTEGER, TBOOLEAN;
+terminal int INTEGERCONST;
+
+// Non terminal rules that return a RESULT value
+non terminal DeclarationProgramme program, header;
+non terminal Bloc declar_lst, body;
+non terminal ArrayList<Instruction> instr_lst, declars, declar, declar_var;
+non terminal DeclarationConstant declar_const;
+non terminal Expression expr, access, operand;
+non terminal Pour for_instr;
+non terminal Tantque while_instr;
+non terminal Condition cond_instr;
+non terminal Ecrire write_instr;
+non terminal Lire read_instr;
+non terminal Instruction instr;
+non terminal Affectation assign;
+non terminal Unaire op_una;
+non terminal Binaire op_bin;
+
+non terminal ArrayList<Idf> l_ident;
+non terminal Type type;
+non terminal Type typebase;
+
+// Precedences
+precedence left PLUS, MINUS, TIMES, DIVIDE, EQUALS, DIFF;
+precedence left INF, SUP, INFEQUAL, SUPEQUAL, AND, OR, DOUBLEPOINTS;
+precedence right TILDA, NOT;
+
+program           ::= header:p declar_lst:declarations STARTPRG body:instructions ENDPRG
+                    {:  p.setInstructions(instructions);
+                        p.setDeclarations(declarations);
+                        //System.out.println("ok, c'est good !!!!"); 
+                        RESULT = p;
+                    :};
+header            ::= PRG IDENT:id {: 
+                        RESULT = new DeclarationProgramme(new Idf(id, "", idleft, idright), "", idleft, idright); :};
+
+declar_lst        ::=  declars:declarations {: 
+                         RESULT = new Bloc(declarations, "", declarationsleft, declarationsright); :};
+
+declars           ::= {: RESULT = new ArrayList<>(); :}
+                      | declars:declarationsList declar:declaration {: 
+                          declarationsList.addAll(declaration); 
+                          RESULT = declarationsList; :};
+
+declar            ::= declar_var:declarations_var {: RESULT = declarations_var; :}
+                      | declar_const:declaration_const {: 
+                          ArrayList<Instruction> declarations = new ArrayList<>();
+                          declarations.add(declaration_const);
+                          RESULT = declarations; :};
+
+declar_var        ::= type:type_var l_ident:l_id SEMICOLON   {: 
+                        ArrayList<Instruction> declarations = new ArrayList<>();
+                        for (Idf id : l_id) {
+                          declarations.add(new DeclarationVariable(type_var, id, "", type_varleft, type_varright));
+                        }
+                        RESULT = declarations; :};
+
+l_ident           ::= IDENT:o {: 
+                      ArrayList<Idf> ids = new ArrayList<>();
+                      ids.add(new Idf(o, "", oleft, oright));
+                      RESULT = ids;
+                       :}
+                      | l_ident:i COMMA IDENT:o {: 
+                        ArrayList<Idf> new_ids = new ArrayList<Idf>(i);   
+                        new_ids.add(new Idf(o, "", oleft, oright));
+                        RESULT = new_ids; :};
+
+type              ::= typebase:o {: RESULT = o; :};
+
+typebase          ::= TINTEGER:o {: RESULT = new Type(Integer.class, "entier", "", oleft, oright); :}
+                      | TBOOLEAN:o {: RESULT = new Type(Boolean.class, "booleen", "", oleft, oright); :};
+
+declar_const      ::= CONSTANT type:type_var IDENT:id_var EQUAL expr:expr_var SEMICOLON   {: 
+                      RESULT = new DeclarationConstant(type_var, new Idf(id_var, "", id_varleft, id_varright),
+                      expr_var,
+                      "", type_varleft, type_varright);
+                       :};
+
+expr              ::= expr:left op_bin:op expr:right
+                      {:
+                       // build binary expression
+                         op.lierGauche(left);
+                         op.lierDroit(right);
+                         RESULT = op;  
+                      :}
+                      | op_una:op expr:operand {: 
+                          op.lierOperand(operand);
+                          RESULT = op;
+                          :}
+                      | OPENPARENT expr:expr_var CLOSEPARENT {: 
+                          RESULT = new Parentheses(expr_var, "", expr_varleft, expr_varright);  :}
+                      | operand:operand             {:  RESULT = operand;  :};
+
+op_bin            ::= PLUS:o        {: RESULT = new Addition("", oleft, oright); :}
+                      | MINUS:o     {: RESULT = new Soustraction("", oleft, oright); :}
+                      | TIMES:o     {: RESULT = new Multiplication("", oleft, oright);  :}
+                      | DIVIDE:o    {: RESULT = new Division("", oleft, oright);  :}
+                      | EQUALS:o    {: RESULT = new Egal("", oleft, oright); :} 
+                      | DIFF:o      {: RESULT = new Different("", oleft, oright); :}
+                      | INF:o       {: RESULT = new Inferieur("", oleft, oright); :}
+                      | SUP:o       {: RESULT = new Superieur("", oleft, oright); :}
+                      | INFEQUAL:o  {: RESULT = new InfEgal("", oleft, oright); :}
+                      | SUPEQUAL:o  {: RESULT = new SupEgal("", oleft, oright); :}
+                      | AND:o       {: RESULT = new Et("", oleft, oright); :}
+                      | OR:o        {: RESULT = new Ou("", oleft, oright); :};
+
+op_una            ::= TILDA:o       {: RESULT = new Tilda("", oleft, oright); :}
+                      | NOT:o       {: RESULT = new Non("", oleft, oright); :}
+                      | MINUS:o     {: RESULT = new Moins("", oleft, oright); :};
+
+operand           ::= access:access       {: RESULT = access; :}
+                      | INTEGERCONST:ib   {: RESULT = new Nombre(ib, "", ibleft, ibright); :}
+                      | TRUE:o            {: RESULT = new Boole(true,"", oleft, oright); :}
+                      | FALSE:o           {: RESULT = new Boole(false,"", oleft, oright);  :};
+
+access            ::= IDENT:id   {: RESULT = new Idf(id, "", idleft, idright); :};
+
+body              ::= instr_lst:instructions {: RESULT = new Bloc(instructions, "", instructionsleft, instructionsright); :};
+
+instr_lst         ::= {: RESULT = new ArrayList(); :}
+                      | instr_lst:instructionList instr:instruction
+                      {:
+                        ArrayList<Instruction> instructions = new ArrayList<Instruction>(instructionList);
+                        instructions.add(instruction);
+                        RESULT = instructions;
+                      :};
+
+instr             ::= assign:inst             {: RESULT = inst; :}
+                      | write_instr:w_instr   {: RESULT = w_instr; :}
+                      | read_instr:r_instr    {: RESULT = r_instr; :}
+                      | cond_instr:c_instr    {: RESULT = c_instr; :}
+                      | while_instr:wh_instr  {: RESULT = wh_instr; :}
+                      | for_instr:for_instr   {: RESULT = for_instr; :};
+
+assign            ::= access:dest EQUAL:e expr:src SEMICOLON {: RESULT = new Affectation(dest, src, "", eleft, eright); :};
+
+write_instr       ::= WRITE expr:write_expr SEMICOLON {:
+                        RESULT = new Ecrire(write_expr, "", write_exprleft, write_exprright);
+                         :}
+                      | WRITE STRINGCONST:string_const SEMICOLON  {:  
+                          RESULT = new Ecrire(new Chaine(string_const, "", string_constleft, string_constright), 
+                          "", string_constleft, string_constright);
+                         :};
+
+read_instr        ::= READ IDENT:id SEMICOLON   {:  
+                        RESULT = new Lire(new Idf(id, "", idleft, idright), "", idleft, idright);
+                      :};
+
+cond_instr        ::= IF expr:e THEN body :b ELSE body:b_else ENDIF {: 
+                        RESULT = new Condition(e, b ,b_else, "", eleft, eright);  :}
+                      | IF expr:e THEN body:b ENDIF {:  RESULT = new Condition(e, b, "", eleft, eright); :};
+
+while_instr       ::= WHILE expr:e DO body:b ENDWHILE {: RESULT = new Tantque(e, b, "", eleft, eright);  :};
+
+for_instr         ::= FOR IDENT:id FROM expr:e TO expr:e_to DO body:b ENDFOR {: 
+                        RESULT = new Pour(new Idf(id, "", idleft, idright), e, e_to, b, "", idleft, idright);  :};

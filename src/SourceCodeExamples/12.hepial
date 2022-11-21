@@ -1,0 +1,9 @@
+programme Program
+
+constante entier n = 12;
+constante booleen b = vrai;
+
+debutprg
+	ecrire n;
+    ecrire b;
+finprg

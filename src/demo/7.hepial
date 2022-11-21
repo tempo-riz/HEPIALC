@@ -1,0 +1,26 @@
+programme Program
+entier x, y;
+debutprg
+  x = 2;
+	ecrire "x: {2..0}";
+	tantque x >= 0 faire
+		ecrire x;
+		x = x - 1;
+	fintantque
+
+	ecrire "x: 2^{0..6}";
+	x = 1;
+	tantque x <= 64 faire
+		ecrire x;
+		x = x + x;
+	fintantque
+
+	x = 0;
+  y = 3;
+	ecrire "x: {0..y}, y=3";
+	tantque x <= y faire
+		ecrire x;
+		x = x + 1;
+	fintantque
+
+finprg

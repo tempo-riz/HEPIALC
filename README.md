@@ -1,2 +1,5 @@
-# HEPIALC
-Own compiler for "HEPIAL" language using java JVM 
+# TP HEPIAL
+
+Usage : make SOURCE=demo/x.hepial
+
+si on a modifié une classe : make clean
