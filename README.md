@@ -1,5 +1,7 @@
 # HEPIAL
 
+A compiler implementation with lexical and syntax analysis, semantic checking, and bytecode generation. Built using Flex and Cup.
+
 # Usage :
 `make SOURCE=demo/x.hepial`
 
